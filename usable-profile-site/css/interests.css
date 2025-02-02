@@ -1,0 +1,64 @@
+/*Selected menu item*/
+#current-menu-item {
+    background-color: var(--button-highlight);
+    border: 3px solid var(--button-text-highlight);
+    color: var(--button-text-highlight);
+}
+
+/*Outer frame*/
+.main-frame {
+    display: flex;
+    gap: 20px;
+}
+
+/*Frame for information on interests*/
+.info {
+    font-size: 18px;
+}
+
+/*Image of interest*/
+img {
+    height: 150px;
+    width: 150px;
+}
+
+/*Image frame*/
+.left-frame {
+    /*border: 1px solid black;*/
+    height: 600px;
+    width: 200px;
+}
+/*Image frame information size*/
+.left-frame p {
+    font-size: 15px;
+}
+
+/*Information frame*/
+.right-frame p {
+    font-size: 20px;
+    width: 800px;
+}
+
+/*Media Query to adjust content to web page size*/
+@media (max-width: 1000px) {
+    .main-frame {
+        gap: 40px;
+
+    }
+
+    .left-frame p {
+        font-size: 12px;
+        margin-bottom: 70px;
+        width: 100px;
+    }
+
+    .right-frame p {
+        font-size: 15px;
+        width: auto;
+    }
+
+    img {
+        height: 75px;
+        width: 75px;
+    }
+}
