@@ -1,1 +1,0 @@
-Place your accessibility and usability reports here.
