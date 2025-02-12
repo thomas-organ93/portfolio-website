@@ -117,7 +117,7 @@ footer img {
 }
 
 /*Media Query to adjust content to web page size*/
-@media (max-width: 600px) {
+@media (min-width: 481px) and (max-width: 600px) {
 
     footer {
         margin-top: 1px;
@@ -130,5 +130,21 @@ footer img {
     footer img {
         height: 20px;
         width: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    footer {
+        margin-top: 1px;
+    }
+
+    footer * {
+        font-size: 10px;
+    }
+
+    footer img {
+        height: 10px;
+        width: 10px;
     }
 }
