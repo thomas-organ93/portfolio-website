@@ -84,7 +84,7 @@
 }
 
 /*Media Query to adjust content to web page size*/
-@media (max-width: 649px) {
+@media (min-width: 481px) and (max-width: 649px) {
     .project-grid {
         gap: 10px;
         grid-template-rows: 400px;
@@ -104,5 +104,28 @@
 
     .project-box-main * {
         font-size: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .project-grid {
+        gap: 1px;
+        grid-template-rows: 300px;
+        grid-template-columns: repeat(2, 200px);
+    }
+
+    .project-box {
+        height: 250px;
+        width: 150px;
+        font-size: 15px;
+    }
+
+    .project-box-image {
+        height: 125px;
+        width: 150px;
+    }
+
+    .project-box-main * {
+        font-size: 10px;
     }
 }
