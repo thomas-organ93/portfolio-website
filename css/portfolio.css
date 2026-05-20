@@ -11,7 +11,7 @@
     flex-wrap: wrap;
     overflow: hidden;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 500px;
+    grid-template-rows: 550px;
     /*background-color: #2196F3;*/
     padding: 10px;
     gap: 50px;
@@ -20,7 +20,7 @@
 /*Project card template*/
 .project-box {
     flex: 2 1 10px;
-    height: 450px;
+    height: 550px;
     width: 300px;
     background-color: var(--button-icon);
     border-width: 4px 2px 2px 4px;
