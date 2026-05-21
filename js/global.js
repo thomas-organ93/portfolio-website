@@ -13,12 +13,19 @@ window.onload = function() {
     let displayTextSelector = document.querySelector(".theme-toggle p");
 
     // Add footer and auto update copyright year
-    fetch('/footer.html')
+    fetch('/footer.html') // The leading slash makes this work everywhere
         .then(response => response.text())
         .then(data => {
             document.getElementById('footer-placeholder').innerHTML = data;
-            document.getElementById("current-year").textContent = new Date().getFullYear();
-        });
+
+            const footerPlaceholder = document.getElementById('footer-placeholder');
+            const yearSpan = footerPlaceholder.querySelector('#current-year');
+
+            if (yearSpan) {
+                yearSpan.textContent = new Date().getFullYear();
+            }
+        })
+        .catch(error => console.error('Error loading footer:', error));
 
 
     // For Reusability
