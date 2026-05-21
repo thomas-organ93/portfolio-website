@@ -3,13 +3,7 @@ if (localStorage.getItem("displayMode") === null) {
     window.localStorage.setItem("displayMode", "light");
 }
 
-// Add footer and auto update copyright year
-fetch('/footer.html')
-    .then(response => response.text())
-    .then(data => {
-        document.getElementById('footer-placeholder').innerHTML = data;
-        document.getElementById("current-year").textContent = new Date().getFullYear();
-    });
+
 
 // On current page load
 window.onload = function() {
@@ -17,6 +11,14 @@ window.onload = function() {
     let displayMode = window.localStorage.getItem("displayMode");
     let displaySelector = document.querySelector(".theme-toggle");
     let displayTextSelector = document.querySelector(".theme-toggle p");
+
+    // Add footer and auto update copyright year
+    fetch('/footer.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('footer-placeholder').innerHTML = data;
+            document.getElementById("current-year").textContent = new Date().getFullYear();
+        });
 
 
     // For Reusability
