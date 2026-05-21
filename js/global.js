@@ -15,19 +15,22 @@ window.onload = function() {
     const repo = window.location.pathname.startsWith('/portfolio-website') ? '/portfolio-website' : '';
 
     // Add footer and auto update copyright year
-    fetch(`${repo}/footer.html`) // The leading slash makes this work everywhere
-        .then(response => response.text())
+    fetch(`${repo}/footer.html`)
+        .then(res => res.text())
         .then(data => {
             document.getElementById('footer-placeholder').innerHTML = data;
 
-            const footerPlaceholder = document.getElementById('footer-placeholder');
-            const yearSpan = footerPlaceholder.querySelector('#current-year');
+            // 3. Set the year
+            document.getElementById('current-year').textContent = new Date().getFullYear();
 
-            if (yearSpan) {
-                yearSpan.textContent = new Date().getFullYear();
-            }
+            // 4. Automatically fix the image paths for subfolders
+            const images = document.querySelectorAll('.footer-img');
+            images.forEach(img => {
+                const imagePath = img.getAttribute('data-src');
+                img.src = `${repo}/${imagePath}`; // Forces the path to always start from the root folder
+            });
         })
-        .catch(error => console.error('Error loading footer:', error));
+        .catch(err => console.error("Footer error: ", err));
 
 
     // For Reusability
