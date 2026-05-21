@@ -3,6 +3,7 @@ if (localStorage.getItem("displayMode") === null) {
     window.localStorage.setItem("displayMode", "light");
 }
 
+// Add footer and auto update copyright year
 fetch('footer.html')
     .then(response => response.text())
     .then(data => {
