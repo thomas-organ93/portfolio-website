@@ -109,13 +109,13 @@
 
 @media (max-width: 480px) {
     .project-grid {
-        gap: 1px;
-        grid-template-rows: 300px;
-        grid-template-columns: repeat(2, 200px);
+        gap: 5px;
+        grid-template-rows: 350px;
+        grid-template-columns: repeat(2, 180px);
     }
 
     .project-box {
-        height: 250px;
+        height: 300px;
         width: 150px;
         font-size: 15px;
     }
