@@ -3,12 +3,20 @@ if (localStorage.getItem("displayMode") === null) {
     window.localStorage.setItem("displayMode", "light");
 }
 
+fetch('footer.html')
+    .then(response => response.text())
+    .then(data => {
+        document.getElementById('footer-placeholder').innerHTML = data;
+        document.getElementById("current-year").textContent = new Date().getFullYear();
+    });
+
 // On current page load
 window.onload = function() {
     // Variables
     let displayMode = window.localStorage.getItem("displayMode");
     let displaySelector = document.querySelector(".theme-toggle");
     let displayTextSelector = document.querySelector(".theme-toggle p");
+
 
     // For Reusability
     function setCSSProperty(variable, value) {
