@@ -116,6 +116,11 @@ footer img {
     width: 25px;
 }
 
+.github-link {
+    font-weight: bold;
+    color: var(--button-text);
+}
+
 /*Media Query to adjust content to web page size*/
 @media (min-width: 481px) and (max-width: 600px) {
 
