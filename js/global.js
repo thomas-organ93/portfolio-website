@@ -12,8 +12,10 @@ window.onload = function() {
     let displaySelector = document.querySelector(".theme-toggle");
     let displayTextSelector = document.querySelector(".theme-toggle p");
 
+    const repo = window.location.pathname.startsWith('/thomasorgan-portfolio') ? '/thomasorgan-portfolio' : '';
+
     // Add footer and auto update copyright year
-    fetch('/footer.html') // The leading slash makes this work everywhere
+    fetch(`${repo}/footer.html`) // The leading slash makes this work everywhere
         .then(response => response.text())
         .then(data => {
             document.getElementById('footer-placeholder').innerHTML = data;
